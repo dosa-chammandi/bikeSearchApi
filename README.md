@@ -52,7 +52,7 @@ This API provides functionality to search for bikes based on various parameters 
    ```
 
 ## Endpoints
-
+#### Users can make use of the Swagger UI to test the application. It is available at http://{localhost}:{port}/docs
 - **POST /search_bikes**: Perform a search for bikes based on specified parameters.
 - **GET /health**: Check the health of the server.
 
@@ -60,14 +60,14 @@ This API provides functionality to search for bikes based on various parameters 
 
 The `/search_bikes` endpoint accepts the following parameters:
 
-- **page** (optional): Page number for pagination (default: 1).
-- **per_page** (optional): Number of items per page (default: 100).
 - **location** (required): Location to search for bikes.
-- **distance** (optional): Distance range for the search (default: 100).
+- **distance** (optional): Distance range for the search (default: 10).
 - **stolenness** (optional): Stolenness parameter for search (default: "proximity").
 - **time_frame** (optional): Time frame for the search (default: "0").
 - **manufacturer** (required): Manufacturer of the bike.
 - **base_64_img_encoding** (optional): Flag to indicate whether to encode bike images (default: "False").
+
+
 
 
 
