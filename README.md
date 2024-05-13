@@ -3,8 +3,8 @@ This API provides functionality to search for bikes based on various parameters 
 
 # Features
 - Location: Search either by location or utilize the user's IP location by giving location as "IP".
-- Duration: Narrow down bikes based on the time elapsed since they were reported stolen (default setting is 2 month).
-- Manufacturer Name: Identify stolen bikes from a particular manufacturer by inputting the manufacturer's name.
+- timeframe: Narrow down bikes based on the time elapsed since they were reported stolen (default setting is 2 month).
+- Manufacturer: Identify stolen bikes from a particular manufacturer by inputting the manufacturer's name.
 - Distance: Fine-tune results within a designated distance range (default setting is 10 kilometers).
 
 ## Installation
