@@ -35,15 +35,15 @@ This API provides functionality to search for bikes based on various parameters 
 1. Open a terminal window.
 2. Navigate to the directory containing the Dockerfile.
 3. Run the following command to build the Docker image:
-  ```
+ ```
     docker build -t {image_name} .
 
   ```
 4. Once the Docker image is built, you can run a container based on that image by running,
-   ```
+ ```
     docker run -p 8080:8080 {image_name}
 
-  ```
+   ```
 
 
 
