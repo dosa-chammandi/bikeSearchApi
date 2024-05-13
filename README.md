@@ -6,6 +6,8 @@ This API provides functionality to search for bikes based on various parameters 
 - timeframe: Narrow down bikes based on the time elapsed since they were reported stolen (default setting is 2 month).
 - Manufacturer: Identify stolen bikes from a particular manufacturer by inputting the manufacturer's name.
 - Distance: Fine-tune results within a designated distance range (default setting is 10 kilometers).
+- Additional information about manufacturer is obtained using Google Gemini.
+- Additional feature which gives base64encoded bike image data.
 
 ## Installation
 
@@ -66,6 +68,33 @@ The `/search_bikes` endpoint accepts the following parameters:
 - **time_frame** (optional): Time frame for the search (default: "0").
 - **manufacturer** (required): Manufacturer of the bike.
 - **base_64_img_encoding** (optional): Flag to indicate whether to encode bike images (default: "False").
+
+## Application Constants
+    Log folder directory and manufacturer csv file paths can be configured in app/app_constants.py
+
+## Running tests
+1. Navigate to the project directory/app/
+2. Run the following command to build the Docker image:
+   ```
+   pytest test.py
+    
+   ```
+## Additional Information
+1. This tool utilizes Google's Gemini to retrieve manufacturer details.
+2. The file all_company_details.csv contains all manufacturer details obtained from the manufacturer endpoint (from the bike search API).
+3. If a new company which is not listed in the above-mentioned CSV appears in the search result, the tool will dynamically query the Gemini API and update the newly listed manufacturer in the CSV. Otherwise it will fetch the details from 
+   the already generated csv dataset.
+4. To generate a new CSV from scratch, please navigate to the project directory/app/ and run the following code:
+   ```
+   python generate_manufacturer_details.py
+    
+   ```
+5. Please note that the GOOGLE API for Gemini has to be specified in the app_constants.py as part of the configuration.
+
+## Logging
+1. Log files are stored at the path specified in the app_constants.py (log_folder).
+2. Each execution generates separate log files, with the file names including timestamp information.
+
 
 
 
